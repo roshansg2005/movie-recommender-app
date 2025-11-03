@@ -1,0 +1,216 @@
+/* --- Base Theme (Spotify Dark) --- */
+body {
+  background-color: #121212; /* Spotify's deep dark */
+  color: #f0f0f0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Light Theme (Clean White) --- */
+body.light-theme {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+/* --- Typography --- */
+.App-header h1 {
+  font-size: 3.5rem;
+  font-weight: 900; /* Bolder, like Spotify */
+  color: #FFFFFF; /* Spotify's main titles are white, not green */
+  letter-spacing: -1px;
+}
+
+body.light-theme .App-header h1 {
+  color: #121212;
+}
+
+.text-muted {
+  color: #b3b3b3 !important; /* Spotify's light grey text */
+}
+body.light-theme .text-muted {
+  color: #6c757d !important;
+}
+
+/* --- Controls (Select Box) --- */
+.form-select-lg {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #555;
+  border-radius: 8px; /* Slightly rounded */
+}
+
+body.light-theme .form-select-lg {
+  background-color: #e9ecef;
+  color: #495057;
+  border-color: #ced4da;
+}
+
+.form-select-lg:focus {
+  border-color: #1DB954; /* Spotify Green */
+  box-shadow: 0 0 0 0.25rem rgba(29, 185, 84, 0.25); /* Green glow */
+}
+
+/* --- CUSTOM SPOTIFY BUTTON --- */
+.btn-spotify {
+  background-color: #1DB954; /* Spotify Green */
+  color: #FFFFFF;
+  border: none;
+  border-radius: 50px; /* Pill shape */
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 2rem;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-spotify:hover {
+  background-color: #1ed760; /* Brighter green */
+  transform: scale(1.03);
+}
+
+.btn-spotify:disabled {
+  background-color: #535353;
+  color: #a7a7a7;
+  transform: scale(1);
+}
+
+/* --- Movie Card --- */
+.card {
+  background-color: #1e1e1e; /* Spotify's card color */
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+  background-color: #282828;
+  transform: translateY(-5px);
+  /* Green glow effect on hover */
+  box-shadow: 0 8px 25px rgba(29, 185, 84, 0.3);
+}
+
+body.light-theme .card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(29, 185, 84, 0.2); /* Lighter green glow */
+}
+
+.card-img-top {
+  border-radius: 0; /* Let the card handle the rounding */
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+body.light-theme .card-title {
+  color: #212529;
+}
+
+/* --- Theme Toggle Button --- */
+.theme-toggle-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.light-theme .theme-toggle-btn {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+body.light-theme .theme-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Footer --- */
+footer {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+body.light-theme footer {
+  color: #6c757d;
+}
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 767px) {
+  .App-header h1 {
+    font-size: 2.5rem; /* Smaller font for mobile */
+    letter-spacing: -0.5px;
+  }
+
+  .theme-toggle-btn {
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+}
+/* --- REPLACE the old .theme-toggle-btn style with this --- */
+.theme-toggle-btn {
+  position: fixed; /* CHANGED from 'absolute' */
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f0f0f0;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1001; /* Make it the highest item */
+}
+
+/* ... (keep the rest of your original .theme-toggle-btn:hover styles) ... */
+
+body.light-theme .theme-toggle-btn {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  color: #333;
+}
+
+body.light-theme .theme-toggle-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- ADD THIS NEW SECTION TO THE BOTTOM OF YOUR CSS FILE --- */
+.control-bar-sticky {
+  /* This gives the bar a background when it sticks */
+  background-color: #121212; /* Match dark body */
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+  /* Make sure it's on top, but below the toggle button */
+  z-index: 1000; 
+  /* Add a subtle shadow when it's stuck */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.light-theme .control-bar-sticky {
+  background-color: #f8f9fa; /* Match light body */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
